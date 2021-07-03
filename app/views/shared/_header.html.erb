@@ -1,7 +1,7 @@
 <div>メインタイトル</div>
 <ul class='lists'>
   <% if user_signed_in? %>
-  <li><%= link_to current_user.nickname, users_index_path , class: "user-nickname" %></li>
+  <li><%= link_to current_user.nickname, class: "user-nickname" %></li>
   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
   <% else %>
   <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
