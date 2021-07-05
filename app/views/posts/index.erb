@@ -1,5 +1,18 @@
 <%= render "shared/header" %>
-<div>titele</div>
-<%= link_to(new_post_path, class: 'post_btn') do %>
-    <span class='post-btn-text'>投稿</span>
-<% end %>
+
+<div>みんなの投稿</div>
+<div>
+  <% @posts.each do |post| %>
+    <div>
+      <%=post.title%>
+      <%=post.post_text%>
+      <%=post.user.nickname%>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to(new_post_path) do %>
+    <span>投稿</span>
+  <% end %>
+</div>
