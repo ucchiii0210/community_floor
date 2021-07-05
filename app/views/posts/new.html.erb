@@ -1,1 +1,15 @@
 <div>new</div>
+  <%= form_with(model:@post ,local: true) do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+<div>
+  <div>タイトル</div>
+    <%= f.text_area :title, placeholder:"タイトル", maxlength:"40" %>
+  <div>内容</div>
+    <%= f.text_area :post_text, placeholder:"説明" ,rows:"7" ,maxlength:"1000" %>
+</div>
+
+<div>
+  <%= f.submit "投稿する" ,class:"post-btn" %>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+<% end %>
