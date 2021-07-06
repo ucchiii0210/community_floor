@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  belongs_to :area_id
+  belongs_to :gender_id
+
 end
