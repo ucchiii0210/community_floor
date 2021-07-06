@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :user_tags
 
-  belongs_to :area_id
-  belongs_to :gender_id
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :area
+  belongs_to :gender
 end
