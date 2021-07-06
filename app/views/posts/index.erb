@@ -16,3 +16,11 @@
     <span>投稿</span>
   <% end %>
 </div>
+
+<%= link_to(new_tag_path) do %>
+  <span>タグをつくる</span>
+<% end %>
+<div>タグ一覧</div>
+<% @tags.each do |tag| %> 
+  <%= tag.tag_name %>
+<% end %>
