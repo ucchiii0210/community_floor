@@ -9,6 +9,33 @@
   </div>
 
   <div class="field">
+    <%= f.label :"性別" %><br />
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"都道府県" %><br />
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"生年月日" %><br />
+    <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1940,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+  </div>
+
+
+
+  <div class="field">
     <%= f.label :"自己紹介" %><br />
     <%= f.text_area :text %>
   </div>
